@@ -213,7 +213,7 @@
     font-family: 'Inter', sans-serif;
     font-size: 19px;
     line-height: 26px;
-    margin-bottom: 22px;
+    margin-bottom: 0;
     padding-bottom: 0;
 }
 .woocommerce-checkout .cc-habib-order-summer-row {
@@ -253,5 +253,34 @@
     text-align: center !important;
     letter-spacing: 3.4px !important;
 }
+.woocommerce-checkout
+    .cc-habib-ourder-summery-section
+    .cc-habib-order-summery-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 22px;
+}
+.woocommerce-checkout .cc-habib-order-summery-additional-images {
+    margin-top: 12px;
+}
+.woocommerce-checkout
+    .cc-habib-order-summery-additional-images
+    .cc-habib-images-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 17px;
+    margin-bottom: 22px;
+}
+.woocommerce-checkout
+    .cc-habib-order-summery-additional-images
+    .cc-habib-images-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
 .woocommerce-checkout {
 }

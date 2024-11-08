@@ -109,7 +109,10 @@ add_action( 'woocommerce_checkout_after_customer_details', 'custom_shipping_fiel
 function custom_checkout_summary() {
     ?>
         <div class="cc-habib-ourder-summery-section">
-            <h3>Order Summary</h3>
+            <div class="cc-habib-order-summery-header">
+                <h3>Order Summary</h3>
+                <img src="<?php echo plugin_dir_url(__FILE__) . 'assets/img/cart.png' ?>" alt="">
+            </div>
             <div class="cc-habib-order-summer-row">
                 <p>Items</p>
                 <p><?php echo WC()->cart->get_cart_total(); ?></p>
@@ -123,6 +126,19 @@ function custom_checkout_summary() {
                 <p><?php echo wc_price(WC()->cart->total); ?></p>
             </div>
             <button type="submit" class="button alt woocommerce_checkout_place_order cc-habib-complete-purchase" name="woocommerce_checkout_place_order" id="place_order" value="Place order" data-value="Place order"><?php _e('complete purchase', 'woocommerce'); ?></button>
+
+            <div class="cc-habib-order-summery-additional-images">
+                <div class="cc-habib-images-top">
+                    <img src="<?php echo plugin_dir_url(__FILE__) . 'assets/img/1.png' ?>" alt="">
+                    <img src="<?php echo plugin_dir_url(__FILE__) . 'assets/img/2.png' ?>" alt="">
+                    <img src="<?php echo plugin_dir_url(__FILE__) . 'assets/img/3.png' ?>" alt="">
+                </div>
+                <div class="cc-habib-images-bottom">
+                    <img src="<?php echo plugin_dir_url(__FILE__) . 'assets/img/4.png.png' ?>" alt="">
+                    <img src="<?php echo plugin_dir_url(__FILE__) . 'assets/img/5.png' ?>" alt="">
+                </div>
+            </div>
+
         </div>
     <?php 
 }
