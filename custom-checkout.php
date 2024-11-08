@@ -158,6 +158,58 @@ function custom_checkout_summary() {
             </div>
 
         </div>
+
+        <div class="cc-habib-slider-wraper-container">
+            <h4>What Our Readers Are Saying</h4>
+            <div class="cc-habib-slider-wraper">
+                <div class="cc-habib-slider-item-wrap">
+                    <div class="cc-habib-slider-desc">
+                        <img src="<?php echo plugin_dir_url(__FILE__) . 'assets/img/quote.png' ?>" alt="">
+                        <p>This book has reshaped the way I view life. The lessons are deep, profound, and life-altering.</p>
+                    </div>
+                    <div class="cc-habib-author">
+                        <p><strong>Anna R.</strong> <em>Verified Reader</em> </p>
+                    </div>
+                </div>
+                <div class="cc-habib-slider-item-wrap">
+                    <div class="cc-habib-slider-desc">
+                        <img src="<?php echo plugin_dir_url(__FILE__) . 'assets/img/quote.png' ?>" alt="">
+                        <p>The audiobook was beyond incredible. The Dolby Atmos experience made it feel like I was part of the narrative itself.</p>
+                    </div>
+                    <div class="cc-habib-author">
+                        <p><strong>James T.</strong> <em>Audiobook Listener</em> </p>
+                    </div>
+                </div>
+                <div class="cc-habib-slider-item-wrap">
+                    <h4>What Our Readers Are Saying</h4>
+                    <div class="cc-habib-slider-desc">
+                        <img src="<?php echo plugin_dir_url(__FILE__) . 'assets/img/quote.png' ?>" alt="">
+                        <p>This is more than a book—it’s a journey. A must-read for anyone seeking spiritual growth.</p>
+                    </div>
+                    <div class="cc-habib-author">
+                        <p><strong>Maria L.</strong> <em>Paperback Reader</em> </p>
+                    </div>
+                </div>
+                <div class="cc-habib-slider-item-wrap">
+                    <div class="cc-habib-slider-desc">
+                        <img src="<?php echo plugin_dir_url(__FILE__) . 'assets/img/quote.png' ?>" alt="">
+                        <p>This is more than a book—it’s a journey. A must-read for anyone seeking spiritual growth.</p>
+                    </div>
+                    <div class="cc-habib-author">
+                        <p><strong>Maria L.</strong> <em>Paperback Reader</em> </p>
+                    </div>
+                </div>
+                <div class="cc-habib-slider-item-wrap">
+                    <div class="cc-habib-slider-desc">
+                        <img src="<?php echo plugin_dir_url(__FILE__) . 'assets/img/quote.png' ?>" alt="">
+                        <p>This is more than a book—it’s a journey. A must-read for anyone seeking spiritual growth.</p>
+                    </div>
+                    <div class="cc-habib-author">
+                        <p><strong>Anna R.</strong> <em>Paperback Reader</em> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     <?php 
 }
 add_action( 'woocommerce_before_order_notes', 'custom_checkout_summary' );
