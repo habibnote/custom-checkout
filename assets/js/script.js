@@ -13,5 +13,6 @@ jQuery(function ($) {
     $('.cc-habib-slider-wraper').slick({
         dots: true,
         infinite: false,
+        arrows: false,
     });
 });

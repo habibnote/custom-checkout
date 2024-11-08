@@ -14,7 +14,7 @@
  */
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
-}
+}   
 
 function cc_habib_enqueue_scripts() {
 
@@ -66,7 +66,12 @@ function custom_order_summary_section() {
                         <td>
                             <div>
                                 <img src="<?php echo wp_get_attachment_url($product->get_image_id()) ?>">
-                                <h3><?php echo $product_name; ?></h3>
+                                <div class="cc-habib-product-name-quantity-price">
+                                    <h3><?php echo $product_name; ?></h3>
+                                    <div class="cc-habib-responsive-quantity">
+                                        <p><?php printf( "%s x %s",$quantity, $product_price ); ?></p>
+                                    </div>
+                                </div>
                             </div>
                         </td>
                         <td><?php echo $product_price; ?></td>
@@ -112,7 +117,17 @@ add_action( 'woocommerce_checkout_after_customer_details', 'custom_shipping_fiel
 
 function custom_checkout_summary() {
     ?>
+        
         <div class="cc-habib-ourder-summery-section">
+
+            <div class="cc-habib-order-summery-additional-images-responsive">
+                <img src="<?php echo plugin_dir_url(__FILE__) . 'assets/img/1.png' ?>" alt="">
+                <img src="<?php echo plugin_dir_url(__FILE__) . 'assets/img/2.png' ?>" alt="">
+                <img src="<?php echo plugin_dir_url(__FILE__) . 'assets/img/3.png' ?>" alt="">
+                <img src="<?php echo plugin_dir_url(__FILE__) . 'assets/img/4.png' ?>" alt="">
+                <img src="<?php echo plugin_dir_url(__FILE__) . 'assets/img/5.png' ?>" alt="">
+            </div>
+
             <div class="cc-habib-order-summery-header">
                 <h3>Order Summary</h3>
                 <img src="<?php echo plugin_dir_url(__FILE__) . 'assets/img/cart.png' ?>" alt="">
@@ -144,6 +159,15 @@ function custom_checkout_summary() {
                 <p><?php echo wc_price(WC()->cart->total); ?></p>
             </div>
             <button type="submit" class="button alt woocommerce_checkout_place_order cc-habib-complete-purchase" name="woocommerce_checkout_place_order" id="place_order" value="Place order" data-value="Place order"><?php _e('complete purchase', 'woocommerce'); ?></button>
+            <div class="cc-habib-place-order-and-price-wrapper">
+                <div class="cc-habib-responsive-price">
+                    <p>Order Total</p>
+                    <span><?php echo wc_price(WC()->cart->total); ?></span>
+                </div>
+                <div class="cc-habib-responsive-place-order">
+                    <button type="submit" class="button alt woocommerce_checkout_place_order" name="woocommerce_checkout_place_order" id="place_order" value="Place order" data-value="Place order"><?php _e('complete purchase', 'woocommerce'); ?></button>
+                </div>
+            </div>
 
             <div class="cc-habib-order-summery-additional-images">
                 <div class="cc-habib-images-top">
@@ -181,7 +205,6 @@ function custom_checkout_summary() {
                     </div>
                 </div>
                 <div class="cc-habib-slider-item-wrap">
-                    <h4>What Our Readers Are Saying</h4>
                     <div class="cc-habib-slider-desc">
                         <img src="<?php echo plugin_dir_url(__FILE__) . 'assets/img/quote.png' ?>" alt="">
                         <p>This is more than a book—it’s a journey. A must-read for anyone seeking spiritual growth.</p>

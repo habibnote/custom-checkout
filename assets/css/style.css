@@ -63,12 +63,11 @@
     line-height: 26px;
     border-top: 1px solid #474747;
 }
-.woocommerce-checkout .cc-habib-product-table table tr td:nth-last-child(1) {
+.woocommerce-checkout .cc-habib-product-table table tr td:nth-child(2) {
     color: #acacac;
 }
 .woocommerce-checkout .cc-habib-product-table table tr td div {
     display: flex;
-    align-items: center;
 }
 .woocommerce-checkout .cc-habib-product-table table tr td div img {
     width: 57px;
@@ -299,5 +298,171 @@
     line-height: 12px;
     font-family: 'Inter', sans-serif !important;
 }
-.woocommerce-checkout {
+.woocommerce-checkout .cc-habib-slider-wraper-container {
+    margin-top: 32px;
+}
+.woocommerce-checkout .cc-habib-slider-wraper-container h4 {
+    color: #fff;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    line-height: 26px;
+    margin-bottom: 30px;
+    padding-bottom: 0;
+}
+.woocommerce-checkout
+    .cc-habib-slider-wraper-container
+    .cc-habib-slider-desc
+    p {
+    color: #fff;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 28px;
+    margin-bottom: 22px;
+}
+.woocommerce-checkout .cc-habib-slider-wraper-container .slick-dots {
+    margin-top: 15px;
+    text-align: left;
+}
+.woocommerce-checkout .cc-habib-slider-wraper-container .slick-dots li {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #4c4c4c;
+}
+.woocommerce-checkout .cc-habib-slider-wraper-container .slick-dots li button {
+    display: none;
+}
+.woocommerce-checkout
+    .cc-habib-slider-wraper-container
+    .slick-dots
+    li.slick-active {
+    background: #fff;
+}
+.woocommerce-checkout .cc-habib-order-summery-additional-images-responsive {
+    display: none;
+}
+.woocommerce-checkout .cc-habib-responsive-place-order {
+    display: none;
+}
+.woocommerce-checkout .cc-habib-responsive-quantity {
+    display: none;
+}
+.woocommerce-checkout .cc-habib-place-order-and-price-wrapper {
+    display: none;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 991px) {
+    .woocommerce .col2-set .col-1,
+    .woocommerce-page .col2-set .col-1 {
+        width: 100% !important;
+    }
+    .woocommerce-checkout .woocommerce-custom-shipping-fields {
+        width: 100% !important;
+    }
+    .woocommerce-checkout .woocommerce-checkout-payment {
+        width: 100% !important;
+    }
+    .woocommerce .col2-set .col-2,
+    .woocommerce-page .col2-set .col-2 {
+        width: 100% !important;
+    }
+    .woocommerce-page .col2-set .col-2 {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin-bottom: 0 !important;
+        z-index: 10000;
+    }
+    .woocommerce-checkout .cc-habib-slider-wraper-container {
+        display: none !important;
+    }
+    .woocommerce-checkout .cc-habib-order-summery-additional-images {
+        display: none !important;
+    }
+    .woocommerce-checkout
+        .cc-habib-ourder-summery-section
+        .cc-habib-order-summery-header,
+    .woocommerce-checkout .cc-habib-order-summer-row {
+        display: none !important;
+    }
+    .woocommerce-checkout .cc-habib-ourder-summery-section {
+        border: none !important;
+        border-top: 1px solid #ffffff !important;
+        padding: 20px 16px 16px 16px !important;
+    }
+    .woocommerce-checkout .cc-habib-order-summery-additional-images-responsive {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        margin-bottom: 10px;
+    }
+    .woocommerce-checkout
+        .cc-habib-order-summery-additional-images-responsive
+        img {
+        width: 50px;
+        height: auto;
+    }
+    .woocommerce-checkout .cc-habib-complete-purchase {
+        display: none !important;
+    }
+    .woocommerce-checkout .cc-habib-responsive-place-order {
+        display: block;
+    }
+    .woocommerce-checkout .cc-habib-place-order-and-price-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 26px;
+    }
+    .woocommerce-checkout
+        .cc-habib-place-order-and-price-wrapper
+        .cc-habib-responsive-price
+        p {
+        color: #acacac;
+        font-family: 'Inter', sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 26px;
+    }
+    .woocommerce-checkout
+        .cc-habib-place-order-and-price-wrapper
+        .cc-habib-responsive-price
+        span {
+        font-weight: 700;
+        font-family: 'Inter', sans-serif;
+        font-size: 20px;
+        line-height: 26px;
+    }
+    .woocommerce-checkout .cc-habib-product-table table tr th:nth-child(2),
+    .woocommerce-checkout .cc-habib-product-table table tr th:nth-child(3),
+    .woocommerce-checkout .cc-habib-product-table table tr td:nth-child(2),
+    .woocommerce-checkout .cc-habib-product-table table tr td:nth-child(3) {
+        display: none;
+    }
+    .woocommerce-checkout .cc-habib-order-summray h2 {
+        line-height: 40px;
+    }
+    .woocommerce-checkout .cc-habib-responsive-quantity {
+        display: flex;
+    }
+    .woocommerce-checkout .cc-habib-responsive-quantity p {
+        color: #acacac;
+        font-size: 12px;
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+        line-height: 26px;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+    .cc-habib-product-name-quantity-price {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
 }
