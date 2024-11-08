@@ -348,10 +348,14 @@
     display: none;
 }
 .woocommerce-checkout .cc-habib-responsive-quantity {
-    display: none;
+    display: none !important;
 }
 .woocommerce-checkout .cc-habib-place-order-and-price-wrapper {
     display: none;
+}
+.woocommerce-checkout .cc-habib-product-name-quantity-price {
+    align-items: center;
+    justify-content: center;
 }
 
 /* Responsive Design */
@@ -449,7 +453,7 @@
         line-height: 40px;
     }
     .woocommerce-checkout .cc-habib-responsive-quantity {
-        display: flex;
+        display: flex !important;
     }
     .woocommerce-checkout .cc-habib-responsive-quantity p {
         color: #acacac;
@@ -460,9 +464,10 @@
         margin-bottom: 0;
         padding-bottom: 0;
     }
-    .cc-habib-product-name-quantity-price {
+    .woocommerce-checkout .cc-habib-product-name-quantity-price {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
+        align-items: flex-start;
     }
 }
