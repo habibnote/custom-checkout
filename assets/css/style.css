@@ -1,0 +1,257 @@
+.woocommerce .col2-set .col-1,
+.woocommerce-page .col2-set .col-1 {
+    width: calc(100% - 355px) !important;
+}
+.woocommerce .col2-set .col-2,
+.woocommerce-page .col2-set .col-2 {
+    width: 325px !important;
+}
+.woocommerce-checkout form.checkout.woocommerce-checkout {
+    width: 100%;
+}
+.woocommerce-checkout .cc-habib-order-summray h2 {
+    color: #fff;
+    font-size: 28px;
+    line-height: 54px;
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 4px;
+    font-weight: 400;
+    padding-bottom: 0;
+}
+.woocommerce-checkout .cc-habib-order-summray p {
+    color: #acacac;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 28px;
+}
+.woocommerce-checkout .cc-habib-product-table {
+    border: 1px solid #404040;
+    background-color: #000;
+    padding: 32px 20px;
+    margin-bottom: 22px;
+}
+.woocommerce-checkout .cc-habib-product-table h3 {
+    color: #fff;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    font-size: 19px;
+    line-height: 26px;
+    margin-bottom: 32px;
+    padding-bottom: 0;
+}
+.woocommerce-checkout .cc-habib-product-table table {
+    width: 100%;
+    border: none !important;
+}
+.woocommerce-checkout .cc-habib-product-table table tr th {
+    color: #fff;
+    font-size: 10px;
+    line-height: 16px;
+    letter-spacing: 3.4px;
+    font-family: 'Inter', sans-serif;
+    padding: 20px !important;
+    border: none !important;
+}
+.woocommerce-checkout .cc-habib-product-table table tr td {
+    padding: 20px;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 26px;
+    border-top: 1px solid #474747;
+}
+.woocommerce-checkout .cc-habib-product-table table tr td:nth-last-child(1) {
+    color: #acacac;
+}
+.woocommerce-checkout .cc-habib-product-table table tr td div {
+    display: flex;
+    align-items: center;
+}
+.woocommerce-checkout .cc-habib-product-table table tr td div img {
+    width: 57px;
+    height: 57px;
+    margin-right: 12px;
+}
+.woocommerce-checkout .cc-habib-product-table table tr td div h3 {
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 26px;
+    margin-bottom: 0;
+}
+.woocommerce-checkout .woocommerce-billing-fields {
+    border: 1px solid #404040;
+    padding: 32px 20px;
+    background-color: #0d0d0d;
+}
+.woocommerce-checkout .woocommerce-billing-fields h3 {
+    color: #fff;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    font-size: 19px;
+    line-height: 26px;
+    margin-bottom: 32px;
+    padding-bottom: 0;
+}
+.woocommerce-checkout .woocommerce-billing-fields .form-row input {
+    padding: 10px 12px !important;
+    margin-bottom: 22px !important;
+    color: #fff !important;
+    border-color: #a3a3a3 !important;
+}
+.woocommerce-checkout .woocommerce-billing-fields .form-row input::placeholder {
+    color: #848484;
+    font-weight: 400;
+    font-family: 'Inter', sans-serif;
+    line-height: 19px;
+}
+.woocommerce-checkout .woocommerce-billing-fields .form-row .select2-selection {
+    margin-bottom: 22px !important;
+}
+.woocommerce-checkout
+    .woocommerce-billing-fields
+    .form-row
+    .select2-container--default
+    .select2-selection--single {
+    border-color: #a3a3a3 !important ;
+}
+.woocommerce-checkout #order_review_heading {
+    display: none !important;
+}
+.woocommerce-checkout
+    .woocommerce-checkout-review-order
+    .woocommerce-checkout-review-order-table {
+    display: none !important;
+}
+.woocommerce-checkout #payment ul.payment_methods {
+    border-bottom: none !important;
+}
+.woocommerce-checkout .woocommerce-privacy-policy-text p {
+    font-family: 'Roboto', sans-serif;
+    color: #acacac;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+}
+.woocommerce-checkout .woocommerce-privacy-policy-text p a {
+    color: #acacac !important;
+    text-decoration: underline !important;
+}
+.woocommerce-checkout .woocommerce-custom-shipping-fields {
+    border: 1px solid #404040;
+    padding: 32px 20px;
+    background-color: #0d0d0d;
+    margin-bottom: 22px;
+    width: calc(100% - 355px) !important;
+}
+
+.woocommerce-checkout .woocommerce-custom-shipping-fields .form-row input {
+    padding: 10px 12px !important;
+    margin-bottom: 22px !important;
+    color: #fff !important;
+    border-color: #a3a3a3 !important;
+}
+.woocommerce-checkout
+    .woocommerce-custom-shipping-fields
+    .form-row
+    input::placeholder {
+    color: #848484;
+    font-weight: 400;
+    font-family: 'Inter', sans-serif;
+    line-height: 19px;
+}
+.woocommerce-checkout
+    .woocommerce-custom-shipping-fields
+    .form-row
+    .select2-selection {
+    margin-bottom: 22px !important;
+}
+.woocommerce-checkout .woocommerce-custom-shipping-fields .form-row label {
+    display: none !important;
+}
+.woocommerce-checkout .woocommerce-custom-shipping-fields select {
+    height: 45px;
+    background: #000;
+    padding: 10px;
+    margin-bottom: 22px !important;
+}
+.woocommerce-checkout
+    .woocommerce-custom-shipping-fields
+    input[type='checkbox'] {
+    margin-bottom: 0 !important;
+    width: 24px;
+    height: 24px;
+    background: #fff;
+}
+.woocommerce-checkout
+    .woocommerce-custom-shipping-fields
+    .woocommerce-input-wrapper
+    label.checkbox {
+    display: block !important;
+}
+.woocommerce-checkout .woocommerce-checkout-payment {
+    width: calc(100% - 355px) !important;
+    border: 1px solid #404040 !important;
+    padding: 32px 20px;
+    background-color: #0d0d0d;
+}
+.woocommerce-checkout .shipping-address-fields {
+    margin-top: 22px;
+}
+.woocommerce-checkout .cc-habib-ourder-summery-section {
+    background-color: #232323;
+    border: 1px solid #ffffff;
+    padding: 32px 20px;
+}
+.woocommerce-checkout .cc-habib-ourder-summery-section h3 {
+    color: #fff;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    font-size: 19px;
+    line-height: 26px;
+    margin-bottom: 22px;
+    padding-bottom: 0;
+}
+.woocommerce-checkout .cc-habib-order-summer-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+.woocommerce-checkout .cc-habib-order-summer-row p {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 26px;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+}
+.woocommerce-checkout .cc-habib-order-summer-row.cc-habib-total-order {
+    padding-top: 16px;
+    border-top: 1px solid #404040;
+}
+.woocommerce-checkout .cc-habib-order-summer-row.cc-habib-total-order p {
+    font-size: 20px;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+}
+.woocommerce-checkout .woocommerce-checkout-payment .form-row #place_order {
+    display: none !important;
+}
+.woocommerce-checkout .cc-habib-complete-purchase {
+    display: block !important;
+    margin-top: 32px !important;
+    font-family: 'Inter', sans-serif !important;
+    width: 100% !important;
+    padding: 16px !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    text-align: center !important;
+    letter-spacing: 3.4px !important;
+}
+.woocommerce-checkout {
+}
