@@ -30,6 +30,12 @@ function cc_habib_enqueue_scripts() {
 
     // Enqueue Custom JS (with jQuery as a dependency)
     wp_enqueue_script( 'cc-habib-script', plugin_dir_url(__FILE__) . 'assets/js/script.js', array('jquery'), time(), true );
+    
+    $localized = [
+        'ajaxurl'       			=> admin_url( 'admin-ajax.php' ),
+        '_wpnonce'      			=> wp_create_nonce()
+    ];
+    wp_localize_script( 'cc-habib-script', 'CCH', apply_filters( "CCH}-localized", $localized ) );
 }
 add_action( 'wp_enqueue_scripts', 'cc_habib_enqueue_scripts' );
 
@@ -238,3 +244,17 @@ function custom_checkout_summary() {
 add_action( 'woocommerce_before_order_notes', 'custom_checkout_summary' );
 
 
+function update_shipping_method() {
+    if (isset($_POST['shipping_method'])) {
+
+        WC()->session->set('chosen_shipping_methods', [sanitize_text_field($_POST['shipping_method'])]);
+        WC()->cart->calculate_totals();
+        $shipping_total = wc_price(WC()->cart->get_shipping_total());
+
+        wp_send_json_success(['shipping_total' => $shipping_total]);
+    } else {
+        wp_send_json_error('Shipping method not set');
+    }
+}
+add_action('wp_ajax_update_shipping_method', 'update_shipping_method');
+add_action('wp_ajax_nopriv_update_shipping_method', 'update_shipping_method');
