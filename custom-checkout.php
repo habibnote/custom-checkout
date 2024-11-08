@@ -121,6 +121,20 @@ function custom_checkout_summary() {
                 <p>Shipping</p>
                 <p><?php echo wc_price(WC()->cart->get_shipping_total()); ?></p>
             </div>
+            <div>
+                <select class="cc-habib-shipping-methods" name="" id="">
+                    <?php           
+                        $shipping_zones = WC_Shipping_Zones::get_zones();
+                        foreach ($shipping_zones as $zone) {
+                            $zone_obj = new WC_Shipping_Zone($zone['zone_id']);
+                            $shipping_methods = $zone_obj->get_shipping_methods();
+                            foreach ($shipping_methods as $method) {
+                                printf( "<option value='%s'>%s</option>",$method->get_title(), $method->get_title() );
+                            }
+                        }
+                    ?>
+                </select>
+            </div>
             <div class="cc-habib-order-summer-row cc-habib-total-order">
                 <p>Order Total</p>
                 <p><?php echo wc_price(WC()->cart->total); ?></p>
@@ -134,7 +148,7 @@ function custom_checkout_summary() {
                     <img src="<?php echo plugin_dir_url(__FILE__) . 'assets/img/3.png' ?>" alt="">
                 </div>
                 <div class="cc-habib-images-bottom">
-                    <img src="<?php echo plugin_dir_url(__FILE__) . 'assets/img/4.png.png' ?>" alt="">
+                    <img src="<?php echo plugin_dir_url(__FILE__) . 'assets/img/4.png' ?>" alt="">
                     <img src="<?php echo plugin_dir_url(__FILE__) . 'assets/img/5.png' ?>" alt="">
                 </div>
             </div>
@@ -143,3 +157,5 @@ function custom_checkout_summary() {
     <?php 
 }
 add_action( 'woocommerce_before_order_notes', 'custom_checkout_summary' );
+
+

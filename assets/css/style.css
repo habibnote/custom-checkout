@@ -281,6 +281,23 @@
     justify-content: center;
     gap: 12px;
 }
-
+.woocommerce-checkout .cc-habib-shipping-methods {
+    width: 100%;
+    background-color: #0d0d0d;
+    padding: 6px;
+    color: #acacac;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 12px;
+    font-family: 'Inter', sans-serif !important;
+    margin-bottom: 17px !important;
+}
+.woocommerce-checkout .cc-habib-shipping-methods option {
+    color: #acacac;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 12px;
+    font-family: 'Inter', sans-serif !important;
+}
 .woocommerce-checkout {
 }
