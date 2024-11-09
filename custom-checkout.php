@@ -35,7 +35,7 @@ function cc_habib_enqueue_scripts() {
         'ajaxurl'       			=> admin_url( 'admin-ajax.php' ),
         '_wpnonce'      			=> wp_create_nonce()
     ];
-    wp_localize_script( 'cc-habib-script', 'CCH', apply_filters( "CCH}-localized", $localized ) );
+    wp_localize_script( 'cc-habib-script', 'CCH', $localized );
 }
 add_action( 'wp_enqueue_scripts', 'cc_habib_enqueue_scripts' );
 
@@ -146,15 +146,16 @@ function custom_checkout_summary() {
                 <p>Shipping</p>
                 <p><?php echo wc_price(WC()->cart->get_shipping_total()); ?></p>
             </div>
+
             <div>
-                <select class="cc-habib-shipping-methods" name="" id="">
+                <select class="cc-habib-shipping-methods" name="cc-habib-shipping-method" id="">
                     <?php           
                         $shipping_zones = WC_Shipping_Zones::get_zones();
                         foreach ($shipping_zones as $zone) {
                             $zone_obj = new WC_Shipping_Zone($zone['zone_id']);
                             $shipping_methods = $zone_obj->get_shipping_methods();
                             foreach ($shipping_methods as $method) {
-                                printf( "<option value='%s'>%s</option>",$method->get_title(), $method->get_title() );
+                                printf( "<option value='%s'>%s</option>",$method->get_instance_id(), $method->get_title() );
                             }
                         }
                     ?>
@@ -244,17 +245,48 @@ function custom_checkout_summary() {
 add_action( 'woocommerce_before_order_notes', 'custom_checkout_summary' );
 
 
-function update_shipping_method() {
-    if (isset($_POST['shipping_method'])) {
+add_action('wp_ajax_update_shipping_cost', 'update_shipping_cost');
+add_action('wp_ajax_nopriv_update_shipping_cost', 'update_shipping_cost');
 
-        WC()->session->set('chosen_shipping_methods', [sanitize_text_field($_POST['shipping_method'])]);
-        WC()->cart->calculate_totals();
-        $shipping_total = wc_price(WC()->cart->get_shipping_total());
-
-        wp_send_json_success(['shipping_total' => $shipping_total]);
-    } else {
-        wp_send_json_error('Shipping method not set');
+function update_shipping_cost() {
+    // Check if the request is valid and the necessary data is present
+    if (!isset($_POST['shipping_method'])) {
+        wp_send_json_error(array('message' => 'Invalid request'));
+        wp_die();
     }
+
+    // Sanitize the input
+    $instance_id = sanitize_text_field($_POST['shipping_method']);
+
+    // Debug: Check if instance ID is valid
+    if (empty($instance_id)) {
+        wp_send_json_error(array('message' => 'Invalid shipping method instance ID'));
+        wp_die();
+    }
+
+    // Set chosen shipping method as an array
+    WC()->session->set('chosen_shipping_methods', array($instance_id));
+
+    // Clear any transients or cached shipping calculations
+    WC()->cart->calculate_shipping();
+    WC()->cart->calculate_totals();
+
+    // Get the total shipping cost and cart total
+    $shipping_total = WC()->cart->get_shipping_total();
+    $cart_total = WC()->cart->get_total();
+
+    // Debug: Check if calculations returned values
+    if ($shipping_total === '' || $cart_total === '') {
+        wp_send_json_error(array('message' => 'Failed to retrieve shipping or cart total'));
+        wp_die();
+    }
+
+    // Send back the response with updated totals
+    wp_send_json_success(array(
+        'shipping_total' => wc_price($shipping_total),
+        'cart_total'     => $cart_total,
+    ));
+
+    wp_die();
 }
-add_action('wp_ajax_update_shipping_method', 'update_shipping_method');
-add_action('wp_ajax_nopriv_update_shipping_method', 'update_shipping_method');
+
